@@ -6,9 +6,9 @@ import News from "./components/news.jsx";
 export default function App() {
   return (
     <div className="bg-image">
-      <div className="h-[10vh] w-full flex flex-row justify-between items-center px-10 border-white/10 bg-white/5 backdrop-blur-xl">
+      <div className="h-[10vh] w-full flex flex-row justify-between items-center px-10 border-white/10 bg-white/5 backdrop-blur-xs">
         <div>
-          <h1 className="text-gray-200 text-[2.5vw]">
+          <h1 className="text-gray-200 text-[2.5vw] oswald">
             Orbit
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#265bbe] to-[#4a1ada]">
               Hub
@@ -23,20 +23,20 @@ export default function App() {
         </button>
       </div>
       <div className="box flex flex-row gap-6 m-5 max-w-[95vw] mx-auto">
-        <div className="section1 w-[38vw] min-w-[360px]">
+        <div className="section1 w-[38vw] min-w-90">
           <div className="text text-[3vw] text-gray-200 bungee mt-10">
             <h1>Track the ISS.</h1>
             <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-[#3377f6] to-[#5d28ff]">
               Explore the Cosmos.
             </h1>
           </div>
-          <div className="news mt-8 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/20 backdrop-blur-xl text-gray-200">
-            
+          <div className="h-[60vh] mt-7 rounded-3xl border border-white/40 p-5 bg-white/2 backdrop-blur-sm shadow-lg  text-gray-200">
+            <News />
           </div>
         </div>
-        <div className="section2 w-full max-w-[56vw] min-w-105 flex flex-col gap-4">
-          <div className="map-card h-[80vh] w-full rounded-4xl border border-white/10 bg-white/5 shadow-2xl shadow-black/30 backdrop-blur-xl overflow-hidden">
-            <div className="map-header flex items-center justify-between px-6 py-4 bg-[#11172f]/80 border-b border-white/10 text-gray-200">
+        <div className="section2 w-full max-w-[56vw] min-w-105 flex flex-col gap-4 mt-10">
+          <div className="h-[80vh] w-full rounded-4xl border border-white/20 bg-white/2 shadow-black/30 backdrop-blur-sm overflow-hidden">
+            <div className="map-header flex items-center justify-between px-6 pt-3 pb-1 border-b border-white/20 text-gray-200">
               <div>
                 <p className="text-sm uppercase tracking-[0.3em] text-[#88b4ff]">
                   Live Satellite

@@ -6,18 +6,26 @@ import "leaflet/dist/leaflet.css";
 
 const issIcon = L.icon({
   iconUrl: satIconPng,
-  iconSize: [32, 32],
-  iconAnchor: [16, 16],
-  popupAnchor: [0, -16],
+  iconSize: [56, 56],
+  iconAnchor: [28, 28],
+  popupAnchor: [0, -30],
+  className: "iss-satellite-icon",
 });
 
 function Recenter({ lat, lon }) {
   const map = useMap();
+
   useEffect(() => {
     if (lat != null && lon != null) {
-      map.setView([lat, lon], map.getZoom(), { animate: true });
+      const edgeOffset = 28;
+      const safeLon = Math.min(
+        Math.max(lon, -180 + edgeOffset),
+        180 - edgeOffset,
+      );
+      map.setView([lat, safeLon], map.getZoom(), { animate: true });
     }
   }, [lat, lon, map]);
+
   return null;
 }
 
