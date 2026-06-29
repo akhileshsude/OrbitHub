@@ -28,14 +28,14 @@ export default function News() {
 
   return (
     <div>
-      <h1 className="text-[2vw] luckiest flex flex-row justify-center items-center">
+      <h1 className="text-[2vw] luckiest flex flex-row justify-center items-center pb-3">
         Space News
       </h1>
-      <div className="grid gap-3 max-h-[50vh] overflow-y-scroll pr-2 oswald2 always-scrollbar">
+      <div className="grid gap-3 max-h-[50vh] overflow-y-scroll pr-2 oswald2 always-scrollbar ">
         {articles.map((article) => (
           <div
             key={article.id}
-            className=" flex flex-row rounded-xl border border-white/20 p-2 shadow bg-black/30"
+            className=" flex flex-row rounded-xl border border-white/20 p-2 shadow bg-black/30 hover:scale-103 duration-150 ease-in-out"
           >
             <img
               src={article.image_url}

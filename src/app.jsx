@@ -30,7 +30,7 @@ export default function App() {
               Explore the Cosmos.
             </h1>
           </div>
-          <div className="h-[60vh] mt-7 rounded-3xl border border-white/40 p-5 bg-white/2 backdrop-blur-sm shadow-lg  text-gray-200">
+          <div className="h-[60vh] mt-7 rounded-3xl border border-white/40 p-4 bg-white/2 backdrop-blur-sm shadow-lg  text-gray-200">
             <News />
           </div>
         </div>

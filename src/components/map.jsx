@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Tooltip,
+  useMap,
+} from "react-leaflet";
 import L from "leaflet";
 import satIconPng from "../assets/sat.png";
 import "leaflet/dist/leaflet.css";
@@ -79,19 +85,27 @@ export default function Map() {
           // use a dark basemap suitable for dark UI
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
           noWrap={true}
-          maxZoom={5}
+          maxZoom={8}
         />
         {coords ? (
           <>
             <Recenter lat={coords.lat} lon={coords.lon} />
             <Marker position={[coords.lat, coords.lon]} icon={issIcon}>
-              <Popup>
-                ISS
-                <br />
-                Lat: {coords.lat.toFixed(4)}
-                <br />
-                Lon: {coords.lon.toFixed(4)}
-              </Popup>
+              <Tooltip
+                direction="top"
+                offset={[0, -30]}
+                opacity={0.95}
+                permanent={false}
+                sticky
+              >
+                <div className="text-xs font-semibold text-black leading-tight">
+                  ISS
+                  <br />
+                  Lat: {coords.lat.toFixed(4)}
+                  <br />
+                  Lon: {coords.lon.toFixed(4)}
+                </div>
+              </Tooltip>
             </Marker>
           </>
         ) : null}
